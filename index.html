@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<title>Arxiu de Concerts — Banda</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="brand">Arxiu de Concerts <span>· Banda</span></div>
+    <nav class="site-nav">
+      <a href="#timeline">Línia temporal</a>
+      <a href="#">La banda</a>
+      <a href="#">Contacte</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero wrap">
+    <p class="kicker">Des de l'escenari a l'arxiu</p>
+    <h1>Un arxiu de concerts.</h1>
+    <p class="lede">El programa, la nota i el vídeo de cada concert.</p>
+    <div class="staff"></div>
+  </section>
+
+  <div class="controls wrap" id="timeline">
+    <label for="yearFilter">Filtra per any</label>
+    <select id="yearFilter">
+      <option value="all">Tots els anys</option>
+    </select>
+    <span class="count" id="resultCount"></span>
+  </div>
+
+  <div class="timeline-shell">
+    <button class="nav-btn nav-prev" aria-label="Desplaça a l'esquerra">‹</button>
+    <button class="nav-btn nav-next" aria-label="Desplaça a la dreta">›</button>
+    <div class="track" id="track">
+      <div class="rail-line"></div>
+    </div>
+  </div>
+
+</main>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Tanca">✕</button>
+    <div class="thumb-lg" id="modalThumb"></div>
+    <div class="modal-body">
+      <p class="m-date" id="modalDate"></p>
+      <h2 class="m-title" id="modalTitle"></h2>
+      <p class="m-venue" id="modalVenue"></p>
+      <p class="m-desc" id="modalDesc"></p>
+      <ul class="pieces" id="modalPieces"></ul>
+      <div class="gallery" id="modalGallery"></div>
+    </div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox"><img alt=""></div>
+
+<footer class="site">
+  <div class="wrap">
+    Esbós de prototip. Les dades viuen a <code>data.js</code>: cada concert és un objecte nou.
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
