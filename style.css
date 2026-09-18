@@ -248,6 +248,39 @@
     box-shadow:0 20px 60px rgba(0,0,0,0.4);
   }
 
+  /* ============ category colors & filter buttons ============ */
+  .cat-castell{ --cat:#E07A3F; --cat-soft:#FBE3D3; }
+  .cat-nadal{ --cat:#C0392B; --cat-soft:#F5D9D6; }
+  .cat-santa-cecilia{ --cat:#7D3C98; --cat-soft:#E6D7EE; }
+  .cat-passacarrers{ --cat:#148F77; --cat-soft:#D3EDE7; }
+  .cat-primavera{ --cat:#27AE60; --cat-soft:#D6F0DF; }
+  .cat-festa-major{ --cat:#D81B60; --cat-soft:#F7DCE6; }
+  .cat-altres{ --cat:#6C757D; --cat-soft:#E3E5E7; }
+
+  .entry .dot{ border-color:var(--cat, var(--accent)); }
+  .entry .dot:hover{ background:var(--cat-soft, var(--accent-soft)); }
+  .entry .card{ border-color:var(--cat-soft, var(--line)); }
+  .entry .card:hover{ border-color:var(--cat, var(--accent)); }
+  .entry .thumb{ background:var(--cat-soft, var(--accent-soft)); }
+  .entry .mini-date{ color:var(--cat, var(--accent-strong)); }
+  .entry .cat-tag{
+    display:inline-block; margin-top:6px; font-size:0.7rem; font-weight:600;
+    color:var(--cat, var(--accent-strong));
+    background:var(--cat-soft, var(--accent-soft));
+    padding:2px 8px; border-radius:999px;
+  }
+
+  .cat-filters{ display:flex; gap:8px; flex-wrap:wrap; padding:4px 0 6px; }
+  .cat-btn{
+    font-size:0.82rem; padding:6px 12px; border-radius:999px;
+    border:1px solid var(--line); background:var(--surface); color:var(--ink);
+    cursor:pointer; display:inline-flex; align-items:center; gap:7px;
+  }
+  .cat-btn .swatch{ width:10px; height:10px; border-radius:50%; background:var(--cat, var(--line)); }
+  .cat-btn:hover{ border-color:var(--ink-soft); }
+  .cat-btn.active{ border-color:var(--cat, var(--accent)); color:var(--cat, var(--accent-strong)); font-weight:600; }
+  .cat-btn.active .swatch{ background:var(--cat, var(--accent)); }
+
   footer.site{
     border-top:1px solid var(--line); padding:26px 0 40px;
     font-size:0.85rem; color:var(--ink-soft);

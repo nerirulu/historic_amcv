@@ -20,6 +20,23 @@ function thumbHtml(concert){
 const trackEl = document.getElementById('track');
 const yearFilterEl = document.getElementById('yearFilter');
 const countEl = document.getElementById('resultCount');
+const catFilterEl = document.getElementById('catFilter');
+
+const CATEGORIES = [
+  { id: 'castell', label: 'Castell' },
+  { id: 'nadal', label: 'Nadal' },
+  { id: 'santa-cecilia', label: 'Santa Cecília' },
+  { id: 'passacarrers', label: 'Passacarrers' },
+  { id: 'primavera', label: 'Primavera' },
+  { id: 'festa-major', label: 'Festa Major' },
+  { id: 'altres', label: 'Altres' }
+];
+const CATEGORY_LABELS = Object.fromEntries(CATEGORIES.map(c => [c.id, c.label]));
+let currentCategory = 'all';
+
+function categorySlug(concert){
+  return concert.category && CATEGORIES.some(c => c.id === concert.category) ? concert.category : 'altres';
+}
 
 function uniqueYears(data){
   return [...new Set(data.map(c => c.date.slice(0,4)))].sort((a,b) => b.localeCompare(a));
@@ -33,8 +50,9 @@ function populateYearFilter(){
 }
 
 function entryTemplate(concert, i, position){
+  const cat = categorySlug(concert);
   return `
-    <div class="entry ${position}" data-index="${i}">
+    <div class="entry ${position} cat-${cat}" data-index="${i}">
       <div class="stem"></div>
       <div class="dot" data-open="${i}" tabindex="0" role="button" aria-label="Obre ${concert.title}"></div>
       <span class="date-tag">${concert.dateLabel}</span>
@@ -44,6 +62,7 @@ function entryTemplate(concert, i, position){
           <p class="title">${concert.title}</p>
           <span class="venue">${concert.venue}</span>
           <span class="mini-date">${concert.dateLabel}</span>
+          <span class="cat-tag">${CATEGORY_LABELS[cat]}</span>
         </div>
       </div>
     </div>
@@ -55,6 +74,7 @@ let currentData = [];
 function render(filterYear){
   currentData = CONCERTS
     .filter(c => filterYear === 'all' || c.date.startsWith(filterYear))
+    .filter(c => currentCategory === 'all' || categorySlug(c) === currentCategory)
     .sort((a,b) => a.date.localeCompare(b.date));
 
   const html = currentData
@@ -68,6 +88,21 @@ function render(filterYear){
     el.addEventListener('click', () => openModal(parseInt(el.getAttribute('data-open'), 10)));
     el.addEventListener('keydown', (e) => {
       if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openModal(parseInt(el.getAttribute('data-open'), 10)); }
+    });
+  });
+}
+
+function renderCategoryButtons(){
+  const buttons = [
+    `<button class="cat-btn active" data-cat="all"><span class="swatch"></span>Tots</button>`,
+    ...CATEGORIES.map(c => `<button class="cat-btn cat-${c.id}" data-cat="${c.id}"><span class="swatch"></span>${c.label}</button>`)
+  ].join('');
+  catFilterEl.innerHTML = buttons;
+  catFilterEl.querySelectorAll('.cat-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentCategory = btn.getAttribute('data-cat');
+      catFilterEl.querySelectorAll('.cat-btn').forEach(b => b.classList.toggle('active', b === btn));
+      render(yearFilterEl.value);
     });
   });
 }
@@ -221,4 +256,5 @@ document.querySelector('.nav-next').addEventListener('click', () => {
 yearFilterEl.addEventListener('change', () => render(yearFilterEl.value));
 
 populateYearFilter();
+renderCategoryButtons();
 render('all');
