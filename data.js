@@ -49,6 +49,30 @@ const CONCERTS = [
     gallery: ["assets/2021/castell musicals/IMG_9418.jpg"]
   },
   {
+    date: "2021-05-02",
+    dateLabel: "2 May 2021",
+    title: "Concert Festa Major 2021",
+    category: "festa-major",
+    venue: "Ateneu de Cerdanyola",
+    photo: "assets/2021/festa major/IMG_6184.jpg",
+    description: "El meu primer concert i també el del Raul :) Molt de repertori reciclat després d'haver d'assajar al local dels castellers dissabtes al matí.",
+    pieces: [
+      
+      { title: "Rosa de Sant Jordi", composer: "Fèlix Martínez i Comín", description: "Sardana xula.", embedUrl: ""},
+      { title: "La Storia", composer: "Jacob de Haan", description: "", embedUrl: "" },
+      { title: "La noche de la iguana", composer: "Lucrecia", description: "Clàssic de l'agrupació.", embedUrl: "https://youtu.be/kKJiEosWsaU"},
+      { title: "Benny Goodman", composer: "Benny Goodman", description: "Medley per exel·lència.", embedUrl: "" },
+      { title: "They can't take that away from me", composer: "George Gershwin", description: "", embedUrl: "https://youtube.com/shorts/aW0C-kq8Xjc" },
+      { title: "Blue Moon", composer: "Richard Rodgers", description: "", embedUrl: "" },
+      { title: "La Gavina", composer: "Marina Rosell", description: "", embedUrl: "" },
+      { title: "Around the world in 80 days", composer: "Otto Schwartz", description: "", embedUrl: "" }
+      
+      
+      
+    ],
+    gallery: ["assets/2021/festa major/IMG_6184.jpg","assets/2021/festa major/IMG_6188.jpg","assets/2021/festa major/IMG_6183.jpg","assets/2021/festa major/IMG_6189.jpg","assets/2021/festa major/IMG_6191.jpg","assets/2021/festa major/IMG_6200.jpg"]
+  },
+  {
     date: "2021-11-19",
     dateLabel: "19 nov. 2021",
     title: "Santa Cecília 2021",
@@ -58,7 +82,10 @@ const CONCERTS = [
     description: "Tornem a l'ateneu després d'un temps amb un reper del segle XIX (iuju).",
     pieces: [
       
-      { title: "West Side Story", composer: "Bernstein", description: "Primera part complicada amb molt esforç tècnic.", embedUrl: "" },
+      { title: "Suite 1", composer: "Gustav Holst", description: "Perfectes els 3 moviments.", embedUrl: "" },
+      { title: "Pavané per un infante difunte", composer: "Fauré", description: "", embedUrl: "" },
+      { title: "Cantique", composer: "Fauré", description: "", embedUrl: "" },
+      { title: "Arlesienne", composer: "Bizet", description: "", embedUrl: "" },
       
     ],
     gallery: ["assets/2021/concerts novembre/Santa_Cecília1.jpg","assets/2021/concerts novembre/Santa_Cecília2.jpg"]
