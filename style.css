@@ -1,20 +1,26 @@
 :root{
-    --bg:#FFF4F0;
-    --surface:#FFFFFF;
-    --ink:#141414;
-    --ink-soft:#5C5C5C;
-    --line:#FFDDD0;
-    --accent:#FF4D6D;
-    --accent-strong:#E63946;
-    --accent-soft:#FFB3C1;
-    --focus:#E63946;
+    --bg:#DDEBD9;
+    --surface:#FCFFFB;
+    --ink:#142319;
+    --ink-soft:#53655A;
+    --line:#CDE0D1;
+    --accent:#2E7D5B;
+    --accent-strong:#1F5C40;
+    --accent-soft:#CFE8DA;
+    --focus:#1F5C40;
     --radius:8px;
   }
 
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
   body{
-    background:var(--bg);
+    background-color:var(--bg);
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(46,125,91,0.16), transparent 42%),
+      radial-gradient(circle at 85% 90%, rgba(124,150,56,0.14), transparent 48%),
+      repeating-linear-gradient(180deg, transparent 0, transparent 26px, rgba(31,92,64,0.10) 26px, rgba(31,92,64,0.15) 27px),
+      repeating-linear-gradient(90deg, rgba(31,92,64,0.06), rgba(31,92,64,0.06) 1px, transparent 1px, transparent 46px);
+    background-attachment:fixed;
     color:var(--ink);
     font-family:'Inter', -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height:1.55;
@@ -161,7 +167,7 @@
 
   /* ============ modal ============ */
   .modal-overlay{
-    position:fixed; inset:0; background:rgba(255,77,109,0.28);
+    position:fixed; inset:0; background:rgba(46,125,91,0.28);
     backdrop-filter:blur(2px);
     -webkit-backdrop-filter:blur(2px);
     display:none; align-items:center; justify-content:center;
@@ -170,7 +176,7 @@
   .modal-overlay.open{ display:flex; }
   .modal{
     background:var(--surface); border-radius:var(--radius);
-    box-shadow:0 24px 60px rgba(230,57,70,0.28);
+    box-shadow:0 24px 60px rgba(31,92,64,0.28);
     max-width:960px; width:100%;
     max-height:92vh; overflow-y:auto;
     -webkit-overflow-scrolling:touch;
@@ -249,20 +255,24 @@
   }
 
   /* ============ category colors & filter buttons ============ */
-  .cat-castell{ --cat:#E07A3F; --cat-soft:#FBE3D3; }
-  .cat-nadal{ --cat:#C0392B; --cat-soft:#F5D9D6; }
-  .cat-santa-cecilia{ --cat:#7D3C98; --cat-soft:#E6D7EE; }
-  .cat-passacarrers{ --cat:#148F77; --cat-soft:#D3EDE7; }
-  .cat-primavera{ --cat:#27AE60; --cat-soft:#D6F0DF; }
-  .cat-festa-major{ --cat:#D81B60; --cat-soft:#F7DCE6; }
-  .cat-altres{ --cat:#6C757D; --cat-soft:#E3E5E7; }
+  .cat-castell{ --cat:#7C9638; --cat-dark:#5C741F; --cat-soft:#E6EDCE; }
+  .cat-nadal{ --cat:#2C6E4F; --cat-dark:#1F5240; --cat-soft:#D7E9DF; }
+  .cat-santa-cecilia{ --cat:#5A7D6B; --cat-dark:#435E50; --cat-soft:#DDE7E0; }
+  .cat-passacarrers{ --cat:#2BA08A; --cat-dark:#1E7E6C; --cat-soft:#D3EFEA; }
+  .cat-primavera{ --cat:#3E9C4E; --cat-dark:#2E7A3C; --cat-soft:#DAF1DC; }
+  .cat-festa-major{ --cat:#2E7D32; --cat-dark:#1F5C26; --cat-soft:#CFE6D0; }
+  .cat-altres{ --cat:#7B8A7E; --cat-dark:#5D6C61; --cat-soft:#E3E9E4; }
 
   .entry .dot{ border-color:var(--cat, var(--accent)); }
   .entry .dot:hover{ background:var(--cat-soft, var(--accent-soft)); }
-  .entry .card{ border-color:var(--cat-soft, var(--line)); }
-  .entry .card:hover{ border-color:var(--cat, var(--accent)); }
+  .entry .card{ background:var(--cat-dark, var(--surface)); border-color:var(--cat, var(--line)); color:#fff; }
+  .entry .card .title{ color:#fff; }
+  .entry .card .venue{ color:rgba(255,255,255,0.82); }
+  .entry .card .mini-date{ color:rgba(255,255,255,0.92); }
+  .entry .card .cat-tag{ background:var(--cat-soft, rgba(255,255,255,0.16)); color:var(--cat-dark, #fff); }
+  .entry .card:hover{ border-color:var(--cat-soft, var(--line)); }
   .entry .thumb{ background:var(--cat-soft, var(--accent-soft)); }
-  .entry .mini-date{ color:var(--cat, var(--accent-strong)); }
+  .entry .mini-date{ color:var(--cat-dark, var(--accent-strong)); }
   .entry .cat-tag{
     display:inline-block; margin-top:6px; font-size:0.7rem; font-weight:600;
     color:var(--cat, var(--accent-strong));

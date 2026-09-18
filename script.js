@@ -3,9 +3,9 @@
    ============================================================ */
 function placeholderSvg(){
   return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-    <rect width="100" height="100" fill="#FFB3C1"/>
-    <circle cx="70" cy="28" r="10" fill="#FFF4F0" opacity="0.7"/>
-    <path d="M0 78 L28 52 L48 70 L68 46 L100 78 L100 100 L0 100 Z" fill="#FF4D6D" opacity="0.55"/>
+    <rect width="100" height="100" fill="#CFE8DA"/>
+    <circle cx="70" cy="28" r="10" fill="#EDF4EA" opacity="0.7"/>
+    <path d="M0 78 L28 52 L48 70 L68 46 L100 78 L100 100 L0 100 Z" fill="#2E7D5B" opacity="0.55"/>
   </svg>`;
 }
 function thumbHtml(concert){
