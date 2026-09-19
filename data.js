@@ -47,9 +47,9 @@ const CONCERTS = [
       
       { title: "West Side Story: America", composer: "LeonardBernstein", description: "Bastant lol, no va acabar de sortir.", embedUrl: "https://youtu.be/BlENx49QyTk" },
       { title: "West Side Story: Somewhere", composer: "Leonard Bernstein", description: "Molt bonic, visca la secció de clarinets.", embedUrl: "https://youtu.be/I0utGSaQ6FE" },
-      { title: "West Side Story: Cool", composer: "Leonard Bernstein", description: "", embedUrl: "https://youtu.be/65hKT0o1FB0" },
+      { title: "West Side Story: Maria", composer: "Leonard Bernstein", description: "", embedUrl: "https://youtu.be/65hKT0o1FB0" },
       { title: "West Side Story: Prologue", composer: "Leonard Bernstein", description: "", embedUrl: "" },
-      { title: "West Side Story: Maria", composer: "Leonard Bernstein", description: "", embedUrl: "" },
+      { title: "West Side Story: Cool", composer: "Leonard Bernstein", description: "", embedUrl: "" },
       { title: "West Side Story: Tonight", composer: "Leonard Bernstein", description: "", embedUrl: "" },
       { title: "I'm still standing", composer: "Elton John", description: "", embedUrl: "" },
       { title: "I dreamed a dream", composer: "Cliff Eidelman", description: "", embedUrl: "" },
@@ -86,7 +86,7 @@ const CONCERTS = [
     dateLabel: "21 nov. 2021 i 18 des. 2021",
     title: "Un Castell de Musicals",
     category: "altres",
-    venue: "Casino aliança del Poblenou i Concert de Pineda",
+    venue: "Casino aliança del Poblenou i Ateneu de Pineda",
     photo: "assets/2021/concerts novembre/Concert_Pineda_2021.jpg",
     description: "Aquest lloc era molt petit però com erem poquíssims ni ens va importar. Va ser molt diver (atents al Jaume i a la Laia).",
     pieces: [
@@ -103,6 +103,71 @@ const CONCERTS = [
     ],
     gallery: ["assets/2021/concerts novembre/Concert_Pineda_2021.jpg", "assets/2021/concerts novembre/Poblenou1.jpg", "assets/2021/concerts novembre/Poblenou2.jpg", ]
   },
+
+  // ANY NOU 2022
+   {
+    date: "2022-01-02",
+    dateLabel: "2 gen. 2022",
+    title: "Concert d'any nou 2022",
+    category: "nadal",
+    venue: "Ateneu de Cerdanyola",
+    photo: "assets/2022/any nou/Cartell_AnyNou2022.jpg",
+    description: "En aquest concert vam llegir pràcticament a vista el vals líric. El tempo és el que és.",
+    pieces: [
+      { title: "Marxa Persa", composer: "Johan Strauss fill", description: "", embedUrl: "" },
+      { title: "L'Arlésienne", composer: "Georges Bizet", description: "", embedUrl: "https://youtu.be/xvHrUzr_wxo" },
+      { title: "Marxa egípcia", composer: "Johan Strauss fill", description: "", embedUrl: "" },
+      { title: "Valse nº2", composer: "Dmitri Xostakòvitx", description: "", embedUrl: "https://youtu.be/rblBMiqrMec" },
+      { title: "Vals líric", composer: "Dmitri Xostakòvitx", description: "", embedUrl: "https://youtu.be/0vk6BGZgrww" },
+      { title: "Polka Tritsch-Tratsch", composer: "Johan Strauss fill", description: "", embedUrl: "https://youtu.be/Idj5M0h6T8g" },
+      { title: "All I want for Christmas is you", composer: "Mariah Carey", description: "", embedUrl: "https://youtu.be/cm94SAN9bkg" },
+      { title: "Marxa Radetzky", composer: "Johan Strauss pare", description: "", embedUrl: "" }
+    ],
+    gallery: ["assets/2022/any nou/20220102_193237.jpg","assets/2022/any nou/20220102_200140.jpg"]
+  },
+
+  // COMPETENCIES VILANOVA 2022
+  {
+    date: "2022-02-20",
+    dateLabel: "20 feb. 2022",
+    title: "Competències musicals de Vilanova 2022",
+    category: "altres",
+    venue: "Plaça de les cols (Vilanova i la Geltrú)",
+    photo: "assets/2022/vilanova/Vilanova1.jpg",
+    description: "TOP millors concerts dels últims cinc anys. La gràcia era tocar contra la @aabm.mestremontserrat per veure qui treia mes gent a ballar. La millor excusa per treure el nostre repertori més disfrutón. Per contra vam haver de contractar dos bolos de clarinet (lol).",
+    pieces: [
+      { title: "Xàbia", composer: "Salvador Salvá", description: "", embedUrl: "" },
+      { title: "Vals nº2", composer: "Dmitri Xostakòvitx", description: "", embedUrl: "" },
+      { title: "Medley Mecano", composer: "Arranjat per Alvaro Lafuente", description: "", embedUrl: "https://www.youtube.com/watch?v=revltjl3Gro" },
+      { title: "Medley Benny Goodman", composer: "Benny Goodman", description: "", embedUrl: "" },
+      { title: "La noche de la Iguana", composer: "Lucrecia", description: "", embedUrl: "" },
+      { title: "Flying Free", composer: "Marc Escudero & Ruben Moreno", description: "", embedUrl: "https://youtu.be/8b56l3kU6r0" }
+    ],
+    gallery: ["assets/2022/vilanova/Vilanova1.jpg","assets/2022/vilanova/Vilanova2.jpg"]
+  },
+
+  // ST PATRICKS 2022
+{
+    date: "2022-03-19",
+    dateLabel: "19 mar. 2022",
+    title: "Saint Patrick's 2022",
+    category: "primavera",
+    venue: "Ateneu de Cerdanyola",
+    photo: "assets/2022/st patricks/Cartell_StPatricks.jpg",
+    description: ".",
+    pieces: [
+      { title: "Folk Song Suite", composer: "Vaughan Williams", description: "", embedUrl: "" },
+      { title: "Aisling's song", composer: "Bruno Coulais", description: "", embedUrl: "" },
+      { title: "Molly on the Shore", composer: "Percy Grainger", description: "Cateu la Itziar dandolo todo", embedUrl: "https://youtu.be/KzsgVsbGmMY" },
+      { title: "Irish Tune", composer: "Percy Grainger", description: "", embedUrl: "" },
+      { title: "Kirckpatrick's muse", composer: "Jay Bocook", description: "", embedUrl: "" },
+     
+    ],
+    gallery: ["assets/2022/st patricks/StPatricks_assaig.jpg","assets/2022/st patricks/20220319_203647.jpg"]
+  },
+
+  // CASTELL DE CASTELLS 2022
+
 
   {
     date: "2026-07-03",

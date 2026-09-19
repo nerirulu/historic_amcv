@@ -258,3 +258,40 @@ yearFilterEl.addEventListener('change', () => render(yearFilterEl.value));
 populateYearFilter();
 renderCategoryButtons();
 render('all');
+
+/* ---------------- random recommendation ---------------- */
+const recLink = document.getElementById('randomRec');
+const youtubePool = [];
+CONCERTS.forEach(c => {
+  (c.pieces || []).forEach(p => {
+    const url = p.embedUrl || '';
+    if(!/youtube|youtu\.be/i.test(url)) return;
+    const shorts = url.match(/\/shorts\/([\w-]+)/);
+    const id = shorts
+      ? shorts[1]
+      : ((url.match(/youtu\.be\/([\w-]+)/) || url.match(/[?&]v=([\w-]+)/) || url.match(/\/embed\/([\w-]+)/)) || [])[1] || null;
+    if(id) youtubePool.push({ id, kind: shorts ? 'shorts' : 'watch', title: p.title || c.title });
+  });
+});
+let recIdx = -1;
+function recUrl(v){
+  return v.kind === 'shorts'
+    ? 'https://www.youtube.com/shorts/' + v.id
+    : 'https://www.youtube.com/watch?v=' + v.id;
+}
+function recommendRandom(){
+  if(!youtubePool.length) return;
+  if(recIdx < 0 || recIdx >= youtubePool.length){
+    for(let i = youtubePool.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [youtubePool[i], youtubePool[j]] = [youtubePool[j], youtubePool[i]];
+    }
+    recIdx = 0;
+  }
+  const v = youtubePool[recIdx++];
+  window.open(recUrl(v), '_blank', 'noopener');
+}
+recLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  recommendRandom();
+});

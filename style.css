@@ -56,6 +56,20 @@
   nav.site-nav a:first-child{margin-left:0;}
   nav.site-nav a:hover, nav.site-nav a:focus-visible{color:var(--ink);}
 
+  nav.site-nav .rec-link{
+    display:inline-flex; align-items:center; gap:8px;
+    margin-left:22px;
+    font-size:0.9rem; font-weight:600;
+    color:var(--accent-strong);
+    background:var(--accent-soft);
+    border:1px solid var(--accent);
+    border-radius:999px;
+    padding:6px 14px;
+    text-decoration:none;
+    transition:background .15s ease, color .15s ease;
+  }
+  nav.site-nav .rec-link:hover, nav.site-nav .rec-link:focus-visible{ color:#fff; background:var(--accent); }
+
   /* hero */
   .hero{padding:56px 0 34px;}
   .hero .kicker{ font-size:0.85rem; color:var(--ink-soft); margin:0 0 10px; }
